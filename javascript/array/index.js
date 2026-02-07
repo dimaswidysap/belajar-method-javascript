@@ -44,6 +44,8 @@ const angka = [90, 60, 1, 2, 3, 4, 80];
 
 const buah = ["semangka", "nangka", "jeruk"];
 
+const kerja = [];
+
 //Array Transformation (Mengubah Data)
 console.log(buah.map((items) => items + " " + "segar"));
 console.log(data.filter((items) => items.age <= 30));
@@ -116,9 +118,47 @@ if (cekAbsen === true) {
   console.log(absen.filter((items) => items.absen === false));
 }
 
-//
-console.log(angka.sort((a, b) => a - b));
-console.log(angka.sort((a, b) => b - a));
+//Array Manipulation (Dasar)
 
-console.log(buah.some((items) => items === "jeruk"));
-console.log(data.some((items) => items.age >= 60));
+const pendaftra = ["budi", "janah", "regan"];
+console.log(pendaftra);
+pendaftra.push("dimas");
+console.log(pendaftra);
+
+console.log(absen);
+let absen1 = absen.pop();
+console.log(absen1);
+console.log(absen);
+
+const alat = ["gergaji", "cetok", "sekop", "mangga"];
+console.log(alat);
+alat.shift();
+console.log(alat);
+
+alat.unshift("gergaji");
+console.log(alat);
+
+const alatDuplikat = alat.slice();
+console.log(alatDuplikat);
+
+alat.splice(3);
+console.log(alat);
+
+//
+const belanjaan = Object.keys(belanja);
+console.log(belanja);
+
+// String Methods
+const kalimat = "Saya Suka Makan Nasi Goreng Pada Siang Hari";
+console.log(kalimat);
+console.log(kalimat.split(" "));
+const kalimatArray = kalimat.split(" ");
+console.log(kalimatArray);
+
+const kalimatNormal = kalimatArray.join(" ");
+console.log(kalimatNormal);
+
+console.log(kalimatNormal.trim());
+
+console.log(kalimatNormal.toLowerCase());
+console.log(kalimatNormal.toUpperCase());
