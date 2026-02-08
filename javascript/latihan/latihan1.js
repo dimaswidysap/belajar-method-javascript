@@ -1,68 +1,32 @@
-const celsius = [0, 25, 30];
+const angka = [1, 2, 3, 4, 5];
+// kuadrat
 
-const fahrenheit = celsius.map((items) => {
-  return (items * 9) / 5 + 32;
-});
+console.log(angka.map((items) => items * items));
 
-console.log(fahrenheit);
+const umur = [12, 18, 25, 14, 30, 16];
+// filter umur
+console.log(umur.filter((items) => items >= 18));
 
-const daftarEmail = [
-  "admin@gmail.com",
-  "user.baru@yahoo.com",
-  "spam@bot.com",
-  "kontak@gmail.com",
-];
-const hasil = daftarEmail.filter((email) => email.includes("gmail.com"));
+const harga = [10000, 20000, 15000, 5000];
+//menjumlahkan semua angka
+console.log(harga.reduce((items, index) => items + index, 0));
+
+const produk = {
+  nama: "Laptop",
+  harga: 12000000,
+  stok: 5,
+};
+
+const hasil = Object.entries(produk).map(([key, value]) => `${key}: ${value}`);
 
 console.log(hasil);
 
-const users = [
-  { id: 1, name: "Andi" },
-  { id: 2, name: "Budi" },
-  { id: 3, name: "Caca" },
-];
+const kalimat = "belajar javascript itu menyenangkan";
 
-const userDicari = users.findLast((items) => items.id === 2);
+const capitalizeWords = (text) =>
+  text
+    .split(" ")
+    .map((kata) => kata.charAt(0).toUpperCase() + kata.slice(1))
+    .join(" ");
 
-console.log(userDicari);
-
-const stokBarang = [10, 15, 0, 8];
-const semuaTersedia = stokBarang.every((stok) => stok > 0);
-console.log(semuaTersedia);
-
-proyek = { id: 101, judul: "Web Portofolio", status: "Selesai" };
-console.log(proyek);
-const proyekArray = Object.values(proyek);
-console.log(proyekArray);
-
-const prices = [100, 200, 300, 400];
-// TUGAS: Buatlah variabel 'discountedPrices' yang berisi harga di atas
-// yang sudah dipotong diskon 10% (dikali 0.9).
-
-const discountedPrices = prices.map((items) => {
-  return items * 0.9;
-});
-
-console.log(discountedPrices);
-
-const inventory = [
-  { name: "Laptop", stock: 5 },
-  { name: "Mouse", stock: 0 },
-  { name: "Keyboard", stock: 12 },
-  { name: "Monitor", stock: 0 },
-];
-
-// TUGAS: Buat variabel 'availableItems' yang hanya berisi produk
-// yang stoknya lebih besar dari 0.
-
-const availableItems = inventory.filter((items) => items.stock > 0);
-console.log(availableItems);
-
-const ages = [18, 21, 15, 30, 12];
-
-const cekUmur = ages.some((items) => items < 17);
-console.log(cekUmur);
-
-const usersFb = ["ahmad", "budi", "chandra"];
-
-console.log(usersFb.map((items) => "Hallo " + items));
+console.log(capitalizeWords(kalimat));
