@@ -189,3 +189,112 @@ console.log(jumlahPoint);
 const avgPoin = jumlahPoint / jumlahVariable;
 
 console.log(avgPoin);
+
+const pesanan = [
+  {
+    id: "TX01",
+    customer: "Andi",
+    items: ["Buku", "Pena"],
+    total: 50000,
+    status: "selesai",
+  },
+  {
+    id: "TX02",
+    customer: "Budi",
+    items: ["Laptop"],
+    total: 15000000,
+    status: "proses",
+  },
+  {
+    id: "TX03",
+    customer: "Citra",
+    items: ["Meja", "Kursi"],
+    total: 1200000,
+    status: "selesai",
+  },
+  {
+    id: "TX04",
+    customer: "Dewi",
+    items: ["Mouse"],
+    total: 300000,
+    status: "batal",
+  },
+  {
+    id: "TX05",
+    customer: "Eka",
+    items: ["Keyboard", "Mousepad"],
+    total: 800000,
+    status: "selesai",
+  },
+];
+
+/*1. Ringkasan Nama & Total (Map)
+Buat array baru bernama ringkasanPesanan. Setiap elemennya harus berupa string dengan format:
+"Pesanan TX01 oleh Andi totalnya Rp 50000".
+
+Hint: Gunakan Template Literals (backtick `).
+
+2. Filter Status & Nominal (Filter)
+Cari semua pesanan yang statusnya "selesai" DAN total harganya di atas 1.000.000. Simpan dalam variabel pesananBesarSelesai.
+
+3. Cek Keamanan Transaksi (Every)
+Gunakan every untuk mengecek apakah semua pesanan memiliki properti id yang diawali dengan huruf "TX".
+
+Hint: Gunakan method string .startsWith("TX").
+
+4. Transformasi Array Dalam Array (Includes)
+Cari semua objek pesanan yang di dalam array items-nya mengandung barang "Mouse".
+
+Hint: Gunakan filter yang di dalamnya mengecek item.items.includes("Mouse").
+
+5. Total Pendapatan Real (Reduce & Filter)
+Hitunglah total uang yang didapat hanya dari pesanan yang statusnya "selesai".
+
+Langkah: Filter dulu yang "selesai", baru jalankan reduce untuk menjumlahkan total. */
+
+// soal pertama
+
+const ringkasanPesanan = pesanan.map((items) => {
+  // "Pesanan TX01 oleh Andi totalnya Rp 50000".
+
+  const detail = `Pesanan ${items.id} oelh ${items.customer} totalnya Rp ${items.total}`;
+
+  return detail;
+});
+
+console.log(ringkasanPesanan);
+
+// soal kedua
+
+const pesananBesarSelesai = pesanan.filter(
+  (items) => items.status === "selesai" && items.total > 1000000,
+);
+
+console.log(pesananBesarSelesai);
+
+// soal ketiga
+
+const security = pesanan.every((items) => items.id.startsWith("TX"));
+
+console.log(security);
+
+// soal keempat
+
+const includeMouse = pesanan.filter((items) => items.items.includes("Mouse"));
+
+console.log(includeMouse);
+
+// soal kelima
+
+const suksesTransaksi = pesanan.filter((status) => status.status === "selesai");
+
+console.log(suksesTransaksi);
+
+const totalPendapatan = suksesTransaksi
+  .map((price) => price.total)
+  .reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+
+console.log(totalPendapatan);
+//
