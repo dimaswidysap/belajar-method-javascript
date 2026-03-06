@@ -46,7 +46,7 @@ const buah = ["semangka", "nangka", "jeruk"];
 
 const kerja = [];
 
-//Array Transformation (Mengubah Data)
+//Array Transformation (Mengubah Data) some
 console.log(buah.map((items) => items + " " + "segar"));
 console.log(data.filter((items) => items.age <= 30));
 console.log(
@@ -162,3 +162,7 @@ console.log(kalimatNormal.trim());
 
 console.log(kalimatNormal.toLowerCase());
 console.log(kalimatNormal.toUpperCase());
+
+let uniqId = Math.random().toString(36).slice(2, 9);
+
+console.log(uniqId);
