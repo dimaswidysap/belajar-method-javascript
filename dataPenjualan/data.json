@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "produk": "Laptop Gaming",
+    "terjual": 15,
+    "total_pendapatan": 150000000
+  },
+  {
+    "id": 2,
+    "produk": "Mouse Wireless",
+    "terjual": 50,
+    "total_pendapatan": 7500000
+  },
+  {
+    "id": 3,
+    "produk": "Monitor 4K",
+    "terjual": 8,
+    "total_pendapatan": 32000000
+  }
+]
